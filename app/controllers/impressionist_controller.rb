@@ -48,6 +48,7 @@ module ImpressionistController
         :action_name => action_name,
         :user_id => user_id,
         :request_hash => @impressionist_hash,
+        :url => request.fullpath,
         :session_hash => session_hash,
         :ip_address => request.remote_ip,
         :referrer => request.referer
