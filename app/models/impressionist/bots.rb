@@ -6,6 +6,30 @@ module Impressionist
       WILD_CARDS.any? { |wc| user_agent.downcase.include?(wc) } || LIST.include?(user_agent)
     end
 
+    def self.new_relic?(ip_address)
+      NEW_RELIC.include? ip_address
+    end
+
+    NEW_RELIC = [
+      "50.31.164.139",
+      "50.112.95.211",
+      "54.247.188.179",
+      "54.248.250.232",
+      "54.251.34.67",
+      "184.73.237.85",
+      "50.16.189.130",
+      "50.18.57.7",
+      "54.214.255.205",
+      "54.228.244.177",
+      "54.232.123.139",
+      "54.241.22.142",
+      "54.248.225.67",
+      "54.251.109.246",
+      "54.252.114.169",
+      "54.252.114.170",
+      "177.71.245.207",
+    ]
+
     WILD_CARDS = ["bot","yahoo","slurp","google","msn","crawler"]
 
     LIST = ["<a href='http://www.unchaos.com/'> UnChaos </a> From Chaos To Order Hybrid Web Search Engine.(vadim_gonchar@unchaos.com)",

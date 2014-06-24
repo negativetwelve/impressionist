@@ -51,14 +51,15 @@ module ImpressionistController
         :url => request.fullpath,
         :session_hash => session_hash,
         :ip_address => request.remote_ip,
-        :referrer => request.referer
+        :referrer => request.referer,
+        :user_agent => request.user_agent
         )
     end
 
     private
 
     def bypass
-      Impressionist::Bots.bot?(request.user_agent)
+      Impressionist::Bots.bot?(request.user_agent) || Impressionist::Bots.new_relic?(request.remote_ip)
     end
 
     def should_count_impression?(opts)
