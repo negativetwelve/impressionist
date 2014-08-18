@@ -59,7 +59,7 @@ module ImpressionistController
     private
 
     def bypass
-      Impressionist::Bots.bot?(request.user_agent) || Impressionist::Bots.new_relic?(request.remote_ip)
+      Impressionist::Bots.bot?(request.user_agent) || Impressionist::Bots.new_relic?(request.remote_ip) || Impressionist::Bots.amazon_health_check?(request.user_agent)
     end
 
     def should_count_impression?(opts)

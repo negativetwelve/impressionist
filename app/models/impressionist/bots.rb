@@ -10,6 +10,10 @@ module Impressionist
       NEW_RELIC.include? ip_address
     end
 
+    def self.amazon_health_check?(user_agent)
+      user_agent.start_with?("Amazon Route 53 Health Check Service")
+    end
+
     NEW_RELIC = [
       "50.31.164.139",
       "50.112.95.211",
