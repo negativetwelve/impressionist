@@ -45,6 +45,7 @@ module ImpressionistController
     def associative_create_statement(query_params={})
       query_params.reverse_merge!(
         :controller_name => controller_name,
+        :controller_path => controller_path,
         :action_name => action_name,
         :user_id => user_id,
         :request_hash => @impressionist_hash,
