@@ -11,6 +11,7 @@ module Impressionist
     end
 
     def self.amazon_health_check?(user_agent)
+      return false if user_agent.nil?
       user_agent.start_with?("Amazon Route 53 Health Check Service")
     end
 
