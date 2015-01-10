@@ -19,7 +19,6 @@ module ActiveRecord
         migration_template 'impression.rb', 'app/models/impression.rb'
       end
 
-      def 
     end
   end
 end
